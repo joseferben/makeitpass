@@ -1,0 +1,26 @@
+{
+  "name": "makeitpass",
+  "version": "0.0.16",
+  "description": "Run a command and iterate on the code until it passes.",
+  "files": [
+    "dist/"
+  ],
+  "bin": {
+    "mips": "dist/cli.js"
+  },
+  "typings": "dist/cli.d.ts",
+  "scripts": {
+    "build": "tsc --noEmit && tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
