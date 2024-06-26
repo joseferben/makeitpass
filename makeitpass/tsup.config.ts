@@ -1,10 +1,9 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  target: "node18",
-  noExternal: [],
+  target: "node22",
   format: ["cjs"],
-  entry: ["src/mip.ts"],
+  entry: ["src/bin.ts"],
   outDir: "dist",
   dts: true,
   splitting: false,

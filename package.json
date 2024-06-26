@@ -1,26 +1,25 @@
 {
-  "name": "makeitpass",
-  "version": "0.0.16",
-  "description": "Run a command and iterate on the code until it passes.",
-  "files": [
-    "dist/"
-  ],
-  "bin": {
-    "mips": "dist/cli.js"
-  },
-  "typings": "dist/cli.d.ts",
+  "name": "makeitpass-project",
+  "private": true,
   "scripts": {
-    "build": "tsc --noEmit && tsup"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.24.1"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "check": "biome check",
+    "format": "biome format --write",
+    "fix": "biome lint --fix",
+    "test": "turbo test",
+    "cs": "changeset",
+    "pub": "turbo run build lint test && changeset version && changeset publish"
   },
   "devDependencies": {
-    "@types/node": "^20.14.9",
-    "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "@changesets/cli": "^2.27.3",
+    "turbo": "1.13.4",
+    "typescript": "^5.3.3",
+    "@biomejs/biome": "1.8.3"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=20.10.0"
   }
 }
