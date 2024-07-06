@@ -2,9 +2,11 @@
 
 ![demo](test/demo.gif)
 
-`makeitpass` runs the provided CLI command and iterates on the code using Claude until the command passes. It auto-fixes tests or build errors by navigating through the codebase and applying fixes.
+`makeitpass` runs the provided CLI command and iterates on the files using Claude until the command passes.
 
-Think
+It's a little CLI helper that fixes tests and builds for you!
+
+Example commands:
 
 - `npx makeitpass "tsc --noEmit"`
 - `npx makeitpass "pytest"`
