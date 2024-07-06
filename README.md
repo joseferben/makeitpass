@@ -1,5 +1,7 @@
 # makeitpass
 
+`npx makeitpass "tsc --noEmit"`
+
 ![demo](test/demo.gif)
 
 `makeitpass` runs the provided CLI command and iterates on the files using Claude until the command passes.
