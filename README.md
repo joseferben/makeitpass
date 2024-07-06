@@ -2,19 +2,24 @@
 
 ![demo](test/demo.gif)
 
-makeitpass runs the provided cli command and iterates on the code using Claude until the command passes. It auto-fixes tests or build errors by navigating through the codebase and applying fixes.
+`makeitpass` runs the provided CLI command and iterates on the code using Claude until the command passes. It auto-fixes tests or build errors by navigating through the codebase and applying fixes.
 
-Think `npx makeitpass "tsc --noEmit"`, `makeitpass "pytest"` or `makeitpass "npm run build"`.
+Think
+
+- `npx makeitpass "tsc --noEmit"`
+- `npx makeitpass "pytest"`
+- `npx makeitpass "npm run build"`
+- `npx makeitpass "make"`
 
 ## Getting Started
 
-![makeitpass](banner.png)
-
-`makeitpass` will edit your files in the current working directory. Make sure to commit or stash your changes beforehand, or you might lose your changes!
-
 `ANTHROPIC_API_KEY=<your-api-key> npx makeitpass "<your-command>"`
 
-or add the API key to your `.env` file and run `npx makeitpass "<your-command>"`
+You need Node.js/npm and a [claude.ai](https://console.anthropic.com/dashboard) API key.
+
+makeitpass makes changes to files in the current working directory. Make sure to commit or stash changes beforehand, or you might lose them!
+
+You can also add the API key to your `.env` file and run `npx makeitpass "<your-command>"`.
 
 ## Configuration
 
@@ -48,4 +53,4 @@ This whole process is repeated until the command succeeds.
 
 Large language models produce a lot of garbage, some of it is useful. By adding a second component to the LLM that verifies its output, we get a solid feedback loop. Test suites or build processes work well because they return a non-zero exit code when they fail.
 
-`makeitpass` is generic enough to run any command. As long as the command exits with a non-zero exit code,
+makeitpass is generic enough to run any command. As long as the command exits with a non-zero exit code and prints useful information to stdout and stderr, it will try to fix it.

@@ -1,6 +1,6 @@
 {
   "name": "makeitpass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Iterates on code using Claude until a command passes..",
   "files": [
     "dist/"
